@@ -6,11 +6,9 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 19:22:02 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:28:59 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/03 15:38:57 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

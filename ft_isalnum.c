@@ -6,11 +6,9 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 19:08:32 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/08/11 15:06:48 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/03 15:39:11 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalnum(int c)
 {

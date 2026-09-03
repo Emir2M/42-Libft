@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 16:07:15 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:20:57 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/03 15:34:00 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ char				**ft_split(char const *s, char c);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t n);
-
-// BONUS
 
 typedef struct s_list
 {
