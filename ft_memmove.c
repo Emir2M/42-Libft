@@ -6,11 +6,11 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 16:35:59 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/08/20 16:36:44 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/03 15:22:36 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

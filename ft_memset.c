@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 19:38:14 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/08/20 19:20:13 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/03 15:27:22 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*d;
 
-	unsigned char *d;
 	d = (unsigned char *)s;
 	i = 0;
 	while (i < n)
