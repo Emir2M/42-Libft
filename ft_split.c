@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/11 16:07:15 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:26:52 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/05 15:51:41 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,57 +33,72 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_make_words(char *word, char const *s, int j, int word_ln)
+static void	ft_free_split(char **res, int i)
 {
-	int	i;
+	while (i > 0)
+	{
+		i--;
+		free(res[i]);
+	}
+	free(res);
+}
 
+static char	*ft_make_word(char const *s, int start, int len)
+{
+	char	*word;
+	int		i;
+
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
 	i = 0;
-	while (word_ln > 0)
-		word[i++] = s[j - word_ln--];
-	word[i] = 0;
+	while (i < len)
+	{
+		word[i] = s[start + i];
+		i++;
+	}
+	word[i] = '\0';
 	return (word);
 }
 
 static char	**ft_split_words(char **res, char const *s, char c, int word_ct)
 {
 	int	i;
-	int	j;
-	int	word_ln;
+	int	start;
+	int	len;
 
 	i = 0;
-	j = 0;
-	word_ln = 0;
-	while (s[j] && i < word_ct)
+	start = 0;
+	while (i < word_ct)
 	{
-		while (s[j] && s[j] == c)
-			j++;
-		while (s[j] && s[j] != c)
-		{
-			j++;
-			word_ln++;
-		}
-		res[i] = (char *)malloc(sizeof(char) * (word_ln + 1));
+		while (s[start] == c)
+			start++;
+		len = 0;
+		while (s[start + len] && s[start + len] != c)
+			len++;
+		res[i] = ft_make_word(s, start, len);
 		if (!res[i])
-			return (0);
-		ft_make_words(res[i], s, j, word_ln);
-		word_ln = 0;
+		{
+			ft_free_split(res, i);
+			return (NULL);
+		}
+		start += len;
 		i++;
 	}
-	res[i] = 0;
+	res[i] = NULL;
 	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		word_ct;
 	char	**res;
+	int		word_ct;
 
-	if (s == 0)
-		return (0);
+	if (!s)
+		return (NULL);
 	word_ct = ft_count_words(s, c);
-	res = (char **)malloc(sizeof(char *) * (word_ct + 1));
+	res = malloc(sizeof(char *) * (word_ct + 1));
 	if (!res)
-		return (0);
-	ft_split_words(res, s, c, word_ct);
-	return (res);
+		return (NULL);
+	return (ft_split_words(res, s, c, word_ct));
 }
