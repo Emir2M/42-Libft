@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 17:16:17 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:26:24 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/07 03:11:37 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1 * sizeof(char));
+	s3 = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!s3)
 		return (NULL);
 	ft_memcpy(s3, s1, ft_strlen(s1));
