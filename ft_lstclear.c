@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/09 17:22:14 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:28:22 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/07 03:08:57 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = ptr;
 	}
-	*lst = NULL;
 }
