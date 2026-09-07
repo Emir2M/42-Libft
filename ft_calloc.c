@@ -6,7 +6,7 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 20:07:13 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:24:06 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/07 03:04:32 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	if (size && count > (size_t)-1 / size)
+	if (size && count > (size_t)(-1) / size)
 		return (NULL);
 	if (!count || !size)
 		return (malloc(1));
