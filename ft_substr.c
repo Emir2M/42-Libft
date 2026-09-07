@@ -6,36 +6,34 @@
 /*   By: emirhyil <emirhyil@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 14:58:50 by emirhyil          #+#    #+#             */
-/*   Updated: 2026/09/03 15:24:43 by emirhyil         ###   ########.fr       */
+/*   Updated: 2026/09/07 03:13:31 by emirhyil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
+	char	*dest;
+	size_t	src_len;
 	size_t	i;
-	size_t	j;
-	char	*final;
 
-	if (s)
+	if (!s)
+		return (NULL);
+	src_len = ft_strlen(s);
+	if (start >= src_len)
+		return (ft_strdup(""));
+	if (len > src_len - start)
+		len = src_len - start;
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (!dest)
+		return (NULL);
+	i = 0;
+	while (i < len && s[start + i])
 	{
-		if (start >= ft_strlen(s) || len == 0 || ft_strlen(s) == 0)
-			return (ft_strdup(""));
-		i = 0;
-		while (i < len && s[i + start] != '\0')
-			i++;
-		final = (char *)malloc((sizeof(char) * i) + 1);
-		if (!(final))
-			return (NULL);
-		j = 0;
-		while (j < i)
-		{
-			final[j] = s[start + j];
-			j++;
-		}
-		final[j] = '\0';
-		return (final);
+		dest[i] = s[start + i];
+		i++;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (dest);
 }
